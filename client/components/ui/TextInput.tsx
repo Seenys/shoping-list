@@ -1,10 +1,11 @@
-import { zincColors } from "@/constants/Colors";
+import { appleRed, zincColors } from "@/constants/Colors";
 import {
   ViewStyle,
   TextStyle,
   useColorScheme,
   StyleSheet,
   TextInput as RNTextInput,
+  TextInputProps as RNTextInputProps,
   View,
 } from "react-native";
 import { ThemedText } from "../ThemedText";
@@ -12,7 +13,7 @@ import { ThemedText } from "../ThemedText";
 type TextInputVariant = "default" | "filled" | "outlined" | "ghost";
 type TextInputSize = "sm" | "md" | "lg";
 
-interface TextInputProps extends Omit<RNTextInput, "style"> {
+interface TextInputProps extends Omit<RNTextInputProps, "style"> {
   variant?: TextInputVariant;
   size?: TextInputSize;
   label?: string;
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   error: {
-    color: "#ef4444", // red-500
+    color: appleRed, // red-500
     marginTop: 4,
   },
   disabled: {

@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { useState } from "react";
 import { Link, useRouter } from "expo-router";
 import Button from "@/components/ui/Button";
-
+import TextInput from "@/components/ui/TextInput";
 const SignInScreen = () => {
   const { signIn, setActive, isLoaded } = useSignIn();
   const router = useRouter();
@@ -20,6 +20,12 @@ const SignInScreen = () => {
   return (
     <View>
       <ThemedText type="title">Sign In</ThemedText>
+      <TextInput
+        label="Email"
+        value={email}
+        placeholder="Enter your email"
+        onChangeText={setEmail}
+      />
       <Button onPress={handleSignIn}>hello</Button>
       <View>
         <Link href="/(auth)/sign-up">
