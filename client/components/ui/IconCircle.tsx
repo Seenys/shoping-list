@@ -29,7 +29,7 @@ const IconCircle: FC<IconCircleProps> = ({
         style,
       ]}
     >
-      <ThemedText style={{ fontSize: 2 }}>{emoji}</ThemedText>
+      <ThemedText style={{ fontSize: 22 }}>{emoji}</ThemedText>
     </View>
   );
 };
