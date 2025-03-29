@@ -1,11 +1,12 @@
+import Button from "@/components/ui/Button";
 import { useUser } from "@clerk/clerk-expo";
-import { Redirect, Stack } from "expo-router";
+import { Redirect, Stack, useRouter } from "expo-router";
 
 const HomeRoutesLayout = () => {
-  const { isSignedIn, isLoaded } = useUser();
+  const { user } = useUser();
+  const router = useRouter();
 
-  if (!isLoaded) return null;
-  if (!isSignedIn) return <Redirect href="/(auth)" />;
+  if (!user) return <Redirect href="/(auth)" />;
 
   return (
     <Stack
@@ -29,6 +30,43 @@ const HomeRoutesLayout = () => {
         name="index"
         options={{
           headerTitle: "Shopping List",
+        }}
+      />
+      <Stack.Screen
+        name="profile"
+        options={{
+          headerTitle: "Profile",
+          presentation: "modal",
+          sheetAllowedDetents: [0.75, 1],
+          headerBackTitle: "Back",
+        }}
+      />
+
+      <Stack.Screen
+        name="list/new/index"
+        options={{
+          presentation: "modal",
+          headerTitle: "New List",
+        }}
+      />
+      <Stack.Screen
+        name="list/new/scan"
+        options={{
+          headerTitle: "Scan QR Code",
+          presentation: "fullScreenModal",
+          headerLargeTitle: false,
+          headerLeft: () => (
+            <Button variant="ghost" onPress={() => router.back()}>
+              Cancel
+            </Button>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="list/new/create"
+        options={{
+          headerTitle: "Create List",
+          presentation: "modal",
         }}
       />
     </Stack>

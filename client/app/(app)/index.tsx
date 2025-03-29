@@ -14,7 +14,7 @@ const HomeScreen = () => {
   const renderHeaderRight = () => {
     return (
       <Pressable
-        onPress={() => router.push("/list/new/index")}
+        onPress={() => router.push("/list/new")}
         style={{ justifyContent: "center", alignItems: "center" }}
       >
         <IconSymbol name="plus" color={appleBlue} />

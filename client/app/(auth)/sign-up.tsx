@@ -109,9 +109,7 @@ export default function SignUpScreen() {
   }
 
   return (
-    <BodyScrollView
-      contentContainerStyle={{ padding: 16, flex: 1, justifyContent: "center" }}
-    >
+    <BodyScrollView contentContainerStyle={{ padding: 16 }}>
       <TextInput
         label="Email"
         autoCapitalize="none"
