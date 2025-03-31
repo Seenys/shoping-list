@@ -62,13 +62,6 @@ const HomeRoutesLayout = () => {
           ),
         }}
       />
-      <Stack.Screen
-        name="list/new/create"
-        options={{
-          headerTitle: "Create List",
-          presentation: "modal",
-        }}
-      />
     </Stack>
   );
 };
