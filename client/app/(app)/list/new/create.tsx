@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
 import { BodyScrollView } from "@/components/ui/BodyScrollView";
-import { ThemedText } from "@/components/ThemedText";
 import { Link, Stack } from "expo-router";
 import { appleBlue } from "@/constants/Colors";
 import TextInput from "@/components/ui/TextInput";
